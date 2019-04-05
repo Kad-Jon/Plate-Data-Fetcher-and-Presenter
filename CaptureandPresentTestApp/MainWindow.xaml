@@ -1,0 +1,41 @@
+﻿<Window x:Class="CaptureandPresentTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CaptureandPresentTestApp"
+        xmlns:WPFMediaKit="clr-namespace:WPFMediaKit.DirectShow.Controls;assembly=WPFMediaKit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="636" Width="1114">
+    <Grid Margin="0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="Confident_Plates" Grid.Column="1" Margin="0,0,0,0" SelectionChanged="ListBox_SelectionChanged"/>
+
+
+
+        <Image x:Name="CameraCaptureBox" Margin="0,0,0,0" VerticalAlignment="Top" Height="488" />
+        <ComboBox x:Name="cameracombobox" SelectionChanged="Cameracombobox_SelectionChanged" Margin="10,493,0,77" RenderTransformOrigin="0.487,2.214" HorizontalAlignment="Left" Width="410">
+            <ComboBoxItem IsSelected="True" Content="Webcam"/>
+            <ComboBoxItem Content="Iphone Cam"/>
+        </ComboBox>
+
+
+
+
+        <Button x:Name="StartCaptureButton" Content="Start Capture" HorizontalAlignment="Left" Margin="10,536,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="EndCaptureButton" Content="End Capture" HorizontalAlignment="Left" Margin="10,568,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Slider x:Name="ConfidenceSlider" HorizontalAlignment="Left" Margin="145,536,0,0" VerticalAlignment="Top" Height="39" Width="175" Value="90" Maximum="100" SmallChange="0.5" Cursor="Arrow" ValueChanged="ConfidenceSlider_ValueChanged" Minimum="60"/>
+        <Label x:Name="ConfidenceLabel" Content="Confidence: " HorizontalAlignment="Left" Margin="334,533,0,0" VerticalAlignment="Top" IsManipulationEnabled="True"/>
+        <Slider x:Name="TopNSlider" HorizontalAlignment="Left" Margin="145,568,0,0" VerticalAlignment="Top" Width="175" Value="1" Minimum="1" Maximum="20" ValueChanged="TopNSlider_ValueChanged" SmallChange="1" TickPlacement="BottomRight" Cursor="Arrow"/>
+        <Label x:Name="TopNLabel" Content="Top N:" HorizontalAlignment="Left" Margin="334,568,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="RecFreqSlider" HorizontalAlignment="Left" Margin="445,541,0,0" VerticalAlignment="Top" Width="175" SmallChange="1" TickPlacement="BottomRight" Minimum="1" Cursor="Arrow" ValueChanged="RecFreqSlider_ValueChanged"/>
+        <Label x:Name="RecFreqLabel" Content="Recognition Frequency:" HorizontalAlignment="Left" Margin="640,536,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ValidatorCheckBox" Content="GB Plate Validator" HorizontalAlignment="Left" Margin="445,571,0,0" VerticalAlignment="Top" Checked="ValidatorCheckBox_Checked" Unchecked="ValidatorCheckBox_Unchecked"/>
+
+
+    </Grid>
+</Window>
